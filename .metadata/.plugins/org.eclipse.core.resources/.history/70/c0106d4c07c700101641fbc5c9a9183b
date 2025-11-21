@@ -1,0 +1,35 @@
+package h2;
+
+public class H2_main {
+    public static void main(String[] args) {
+
+        int n = 299, digits = 0;
+        int[] a = new int[9];   
+
+        if (n == 0) {
+            digits = 1;
+            a[8] = 0;   
+        } else {
+            //int temp = n;
+            while (n > 0) {
+                digits++;
+                n /= 10;
+            }
+            int index = 8;    
+            //temp = n;
+
+            while (n > 0) {
+                a[index] = n % 10;  // letzte Ziffer einfügen
+                n /= 10;            // entferne letzte Ziffer
+                index--;               // gehe eine Zelle nach links
+            }
+        }
+
+        // Ausgabe zu Kontrollzwecken
+        System.out.println("digits = " + digits);
+        System.out.print("Array a = ");
+        for (int value : a) {
+            System.out.print(value + " ");
+        }
+    }
+}

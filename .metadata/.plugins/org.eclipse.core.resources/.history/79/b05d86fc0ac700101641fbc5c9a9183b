@@ -1,0 +1,32 @@
+package h2;
+
+public class H2_main {
+    public static void main(String[] args) {
+
+        int n = 299, digits = 0;
+        int[] a = new int[9];  
+
+        if (n == 0) {
+            digits = 1;
+            a[8] = 0;   
+        } else {
+            int i = n;
+            while (i > 0) {
+                digits++;
+                i /= 10;
+            }
+            
+            int index = 8;     
+            i = n;
+
+            while (i > 0) {
+                a[index] = i % 10;  
+                i /= 10;            
+                index--;               
+            }
+        }
+
+        
+        }
+    }
+
